@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/Img/Company_icon.png">
+    <title>Solar Performance Calculator</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <a href="#home" class="logo">
+            <img src="Img/tnb read/Solana Tec final logos-22.png" alt="Solana Tec Logo"
+                onerror="this.onerror=null; this.src='https://placehold.co/80x80/FF7505/142850?text=Logo';">
+        </a>
+        <div class="header-text-content">
+            <strong>
+                <h1>Welcome to the Solana Tec Guideline!</h1>
+            </strong>
+            <div class="header-nav-links">
+                <a href="#readSystemSize">How to know Solar System Size?</a>
+                <a href="#monthlyYieldCalculator">Solar Performance Calculator</a>
+                <a href="#checkYield">Check Solar Yield</a>
+                <a href="#checkFLH">Full Load Hour</a>
+                <a href="#tnbBillRead">Performance Dashboard Overview</a>
+                <a href="#tnbBillRead">How to read My TNB Bill?</a>
+                <a href="#nemRead">NEM meter</a>
+                <a href="#TriggerAlarm">Common Failure</a>
+                <a href="#EnergyClipping">Energy Clipping</a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="link-area">
+
+        <p>
+            This guideline is designed to assist users in understanding how to interpret solar system size and
+            how to read their TNB electricity bill effectively.<br>
+            It provides step-by-step instructions on identifying the relevant information on a solar system
+            specification and <br> explains the key components of a typical TNB bill. The guideline also includes
+            a corresponding calculator to help <br> users estimate energy production based
+            on system size and calculate electricity costs or savings more accurately based on their usage.
+        </p>
+    </div>
+
+    <div id="readSystemSize" class="container_tech ">
+        <h1>How to Know Your Solar System Size?</h1>
+
+
+        <div class="flex-section">
+            <div class="image-section">
+                <img src="Img/tnb read/cal1.png" alt="Monthly Yield from SolisCloud">
+            </div>
+            <div class="image-section">
+                <img src="Img/tnb read/cal2.png" alt="Monthly Yield from SolisCloud">
+            </div>
+
+
+            <!--  
+            <div id="monthlyYieldCalculator" class="input-section">
+                <h2>Solar Perfromance</h2>
+
+                <label for="solarSizeInput">Solar System Size (kW):</label>
+                <input type="number" id="solarSizeInput" placeholder="e.g., 6.985" step="0.01">
+
+                <label for="actualYieldInput">Actual Monthly Yield (kWh):</label>
+                <input type="number" id="actualYieldInput" placeholder="e.g., 620" step="0.01">
+
+                <label for="areaSelect">Choose Area:</label>
+                <select id="areaSelect">
+                    <option value="0">JB</option>
+                    <option value="1">Austin/Tebrau/Setia Tropika</option>
+                    <option value="2">Kluang/Batu Pahat</option>
+                    <option value="3">Muar/Malacca</option>
+                    <option value="4">KL/Selangor</option>
+                </select>
+
+                <label for="angleSelect">Choose Roof Angle Range:</label>
+                <select id="angleSelect">
+                    <option value="0">5°-15°</option>
+                    <option value="1">15°-35°</option>
+                    <option value="2">35°-45°</option>
+                </select>
+
+                <button onclick="calculateMonthlyYield()">Calculate Monthly Yield</button>
+
+                <div id="monthlyYieldError" class="error"></div>
+                <div id="monthlyYieldOutput"></div>
+            </div>
+
+        -->
+        </div>
+
+        <div class="show-section">
+            <div id="monthlyYieldCalculator" class="input-section">
+                <h2>Solar Perfromance</h2>
+
+                <label for="solarSizeInput">Solar System Size (kW):</label>
+                <input type="number" id="solarSizeInput" placeholder="e.g., 6.985" step="0.01">
+
+                <label for="actualYieldInput">Actual Monthly Yield:</label>
+                <input type="number" id="actualYieldInput" placeholder="e.g., 620" step="0.01">
+
+                <label for="unitSelect">Select Unit:</label>
+                <select id="unitSelect">
+                    <option value="kWh">kWh</option>
+                    <option value="MWh">MWh</option>
+                </select>
+
+                <label for="areaSelect">Choose Area:</label>
+                <select id="areaSelect">
+                    <option value="0">JB</option>
+                    <option value="1">Austin/Tebrau/Setia Tropika</option>
+                    <option value="2">Kluang/Batu Pahat</option>
+                    <option value="3">Muar/Malacca</option>
+                    <option value="4">KL/Selangor</option>
+                </select>
+
+                <button onclick="calculateMonthlyYield()">Calculate Monthly Yield</button>
+
+                <div id="monthlyYieldError" class="error"></div>
+                <div id="monthlyYieldOutput"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div id="checkYield" class="container_tech">
+
+        <h2>How to check the earned Yield in SolisCloud?</h2>
+        <div class="show-section">
+            <div class="image-section">
+                <img src="Img/tnb read/app-3.png" alt="Monthly Yield from SolisCloud">
+            </div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+
+    <div id="checkFLH" class="container_tech">
+
+        <h2>How to check the system performance and compare with our calculated generation?</h2>
+        <div class="show-section">
+
+            <div class="image-section">
+                <img src="Img/tnb read/app-5.png" alt="Monthly Yield from SolisCloud">
+            </div>
+        </div>
+
+    </div>
+
+    <hr class="section-divider">
+
+    <div id="checkFLH" class="container_tech">
+        <h2>Why the dashboard does not show full?</h2>
+        <div class="flex-section">
+            <div class="image-section">
+                <img src="Img/tnb read/performance.png" alt="SolisCloud Performance">
+            </div>
+            <div class="text-section">
+                <h1>Performance Dashboard</h1>
+                <p>The dashboard not show the full performance data due to
+                    the conversion DC to AC have losses, and the inverter may not be able to convert all the DC energy
+                    produced by the solar panels into AC energy and will not more than 80%.
+                    This can result in a lower-than-expected performance reading on the dashboard.
+                    Additionally, the performance data will be updated in real-time every five minutes.
+                </p>
+
+
+            </div>
+        </div>
+    </div>
+    <hr class="section-divider">
+
+
+    <div id="tnbBillRead" class="container_tech">
+        <h1>How to Read Your TNB Bill?</h1>
+
+        <div id="tnbBill1" class="flex-section">
+            <div class="image-caption-col">
+                <img src="Img/tnb read/TNB table.png" alt="TNB Bill Overview 1">
+                <div class="img-caption"><strong> Here is the table for New TNB Bill Overview</strong></div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div id="nemRead" class="container_tech">
+        <h1>How to Read NEM meter?</h1>
+
+        <div id="nemview" class="flex-section">
+            <div class="image-caption-col">
+                <img src="Img/tnb read/NEMmeter.png" alt="NEM meter view">
+            </div>
+
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div id="TriggerAlarm" class="container_tech">
+        <h1>What is the common failure that will Trigger Alarm?</h1>
+
+        <div id="TriggerAlarmView" class="flex-section">
+            <div class="image-caption-col">
+                <img src="Img/tnb read/TriggerAlarm.png" alt="NEM meter view">
+            </div>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+
+    <div id="EnergyClipping" class="container_tech">
+        <h1>What is Energy Clipping?</h1>
+        <p style="font-size: 16px; line-height: 1.5;text-align: center; font-style: italic;"><strong>
+                Energy clipping happens when solar electric (photovoltaic) panels provide more power than an
+                inverter
+                can handle.
+                Clipping is lost power production
+            </strong></p>
+        <div id="EnergyClippingView" class="flex-section">
+            <div class="image-caption-col">
+                <img src="Img/tnb read/energyClipping.png" alt="NEM meter view">
+                <p>
+                    As you can see, that is a cut off line at above diagram, this is due to the inverter reaching its
+                    maximum capacity and unable to process the excess energy produced by the solar panels.
+                </p>
+            </div>
+
+            <div class="image-caption-col">
+                <img src="Img/tnb read/energyClipping2.png" alt="NEM meter view">
+                <p>
+                    Same as beside diagram, the inverter hit the maximum capacity then cause a cut off line.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <button onclick="scrollToTop()" id="backToTopBtn" title="Back to Top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+    </button>
+
+
+
+    <script src="js/performace.js"></script>
+    <script src="js/QnA.js"></script>
+    <script src="js/backToTop.js"></script>
+</body>
+
+</html>
